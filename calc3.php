@@ -11,7 +11,7 @@ print '数値を小文字で入力してください'
 <form action = "calc3.php" method= "POST">
     <input type = 'text' name ='num1'>  <!--１つ目の項-->
 
-    <select name="select">  <!--演算子の選択-->
+    <select name='select'>  <!--演算子の選択-->
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">×</option>
@@ -21,7 +21,7 @@ print '数値を小文字で入力してください'
     <input type = 'text' name ='num2'><br/>  <!--２つ目の項-->
 
     <input type = 'submit' value ='計算'>
-    <input type = 'reset' value ='クリア'>
+    <input type = 'reset' value ='クリア'><br/>
 
 
     <?php
@@ -29,6 +29,7 @@ print '数値を小文字で入力してください'
 
     //値が入っているかの判定
     if(isset($_POST['num1']) && $_POST['num2'] && $_POST['select']){
+        
         //数字かどうかの判定
         if (is_numeric($_POST['num1']) && is_numeric($_POST['num2'])) {
             //どの演算記号を選んだかによって条件わけ
@@ -51,12 +52,12 @@ print '数値を小文字で入力してください'
             }
         }
         else {
-            print "計算できませんa";
+            print '計算できませんa';
         }//数字じゃない時
-
     }
-
-    else {print '計算できませんb';}//何も入っていない時
+    else {
+        print '計算できませんb';
+    }//何も入っていない時
     ?>
 
 </body>
