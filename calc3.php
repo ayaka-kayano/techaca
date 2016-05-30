@@ -52,7 +52,9 @@
                         print '0を分母にすることはできません';
                     }
                     break;
-            endswich;
+             default;
+                 break;
+
             }
         }
         else {
