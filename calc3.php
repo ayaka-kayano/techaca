@@ -3,8 +3,6 @@
     <title>電卓</title>
 </head>
 
-<p>'数値を小文字で入力してください'</p>
-
 <body>
 
 <!--フォームを作る-->
@@ -25,39 +23,38 @@
 
 
     <?php
-    //計算
+    //-------計算--------
 
     //値が入っているかの判定
-    if(isset($_POST['num1']) && $_POST['num2'] && $_POST['select']){
-        
+   if(isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['select'])) {
         //数字かどうかの判定
         if (is_numeric($_POST['num1']) && is_numeric($_POST['num2'])) {
 
             //どの演算記号を選んだかによって条件わけ
             switch ($_POST['select']) {
                 case'+':
-                    print($_POST['num1'] + $_POST['num2']);
+                    print($answer = $_POST['num1'] + $_POST['num2']);
                     break;
                 case'-':
-                    print($_POST['num1']- $_POST['num2']);
+                    print($answer = $_POST['num1'] - $_POST['num2']);
                     break;
                 case'*':
-                    print($_POST['num1'] * $_POST['num2']);
+                    print($answer = $_POST['num1'] * $_POST['num2']);
                     break;
                 case'/':
                     //２つ目の項が０の時を除外
                     if ($_POST['num2'] != 0){
-                        print($_POST['num1'] / $_POST['num2']);}
+                        print($answer = $_POST['num1'] / $_POST['num2']);}
                     else print '0を分母にすることはできません';
                     break;
             }
         }
         else {
-            print '計算できませんa';
+            print '小文字の数字を入力してください';
         }//数字じゃない時
     }
     else {
-        print '計算できませんb';
+        print '数値を入力してください';
     }//何も入っていない時
     ?>
 
