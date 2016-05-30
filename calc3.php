@@ -46,9 +46,13 @@
                 case'/':
                     //２つ目の項が０の時を除外
                     if ($_POST['num2'] != 0){
-                        print($_POST['num1'] / $_POST['num2']);}
-                    else print '0を分母にすることはできません';
+                        print($_POST['num1'] / $_POST['num2']);
+                    }
+                    else {
+                        print '0を分母にすることはできません';
+                    }
                     break;
+            endswich;
             }
         }
         else {
